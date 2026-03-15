@@ -1,0 +1,389 @@
+/* === Reset & Base === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #c8c8c8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Rainbow bar === */
+.rainbow-bar {
+  height: 4px;
+  max-width: 600px;
+  background: linear-gradient(
+    to right,
+    #b0b0b0,
+    #e06060,
+    #f08080,
+    #f0a060,
+    #50d070,
+    #50c0e0,
+    #6090e0,
+    #b080e0
+  );
+  border-radius: 2px;
+  margin-top: 2rem;
+}
+
+/* === Navigation === */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* === Hero === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 2rem 6rem;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-label {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* === Bio === */
+.bio {
+  padding: 8rem 0;
+  border-top: 1px solid #1a1a1a;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.bio h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.bio-text p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.bio-image img {
+  border-radius: 4px;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+/* === Work === */
+.work {
+  padding: 6rem 0;
+  border-top: 1px solid #1a1a1a;
+}
+
+.work > .container > h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  letter-spacing: 0.02em;
+}
+
+/* === Project === */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-top: 1px solid #1a1a1a;
+  align-items: start;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.project-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #666;
+}
+
+.role-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.role-type {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.project-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-details li {
+  font-size: 0.85rem;
+  color: #999;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.project-details li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #666;
+  font-weight: 800;
+}
+
+/* === Project Galleries === */
+.project-gallery {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.project-gallery--restage {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-gallery--dfp {
+  grid-template-columns: 1fr 2fr;
+}
+
+.project-gallery--dfp img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.project-gallery--dfp img:last-child {
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+.project-gallery--cycles {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery--dbf {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-gallery--dbf img:first-child {
+  grid-column: 1 / -1;
+}
+
+.project-gallery--resonance {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery--resonance img {
+  aspect-ratio: 3 / 2;
+}
+
+.project-gallery--ootfest {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-gallery--ootfest img:first-child {
+  grid-column: 1 / -1;
+}
+
+/* === Contact === */
+.contact {
+  padding: 6rem 0 4rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+.contact h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.contact-info a {
+  color: #ccc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bio-image {
+    order: -1;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-gallery--restage,
+  .project-gallery--dfp,
+  .project-gallery--dbf,
+  .project-gallery--ootfest {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery--dbf img:first-child,
+  .project-gallery--ootfest img:first-child {
+    grid-column: auto;
+  }
+}
