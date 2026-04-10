@@ -4,245 +4,281 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ventcislava Nekova</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:"Big Caslon";src:url("assets/fonts/BigCaslon-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0b0b0b;color:#eaeaea;font-family:Inter, sans-serif;line-height:1.6;}
-section{padding:120px 8vw;border-bottom:1px solid #1a1a1a;}
-.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;max-width:900px;}
-.hero h1{font-family:"Playfair Display", serif;font-size:64px;margin-bottom:20px;letter-spacing:-1px;}
-.hero p{font-size:22px;color:#bdbdbd;max-width:650px;}
-.nav{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);padding:20px 8vw;display:flex;justify-content:space-between;z-index:100;}
-.nav a{color:#dcdcdc;text-decoration:none;margin-left:25px;font-size:14px;letter-spacing:.05em;}
-.project{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
-.project-text h2{font-family:"Playfair Display", serif;font-size:40px;margin-bottom:15px;}
-.project-role{color:#8c8c8c;font-size:14px;letter-spacing:.1em;margin-bottom:20px;text-transform:uppercase;}
-.project-text p{color:#c7c7c7;margin-bottom:20px;}
-.project-text ul{list-style:none;}
-.project-text li{margin-bottom:8px;color:#9e9e9e;font-size:14px;}
-.project-text li::before{content:"–";margin-right:8px;color:#555;}
-.project-images{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.project-images img{width:100%;height:100%;object-fit:cover;filter:contrast(105%);transition:transform .4s ease;}
-.project-images img:hover{transform:scale(1.03);}
-.project-images.single{grid-template-columns:1fr;}
-.experience{max-width:900px;}
-.experience h2{font-family:"Playfair Display", serif;font-size:40px;margin-bottom:30px;}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-.exp-item{border-top:1px solid #222;padding-top:20px;}
-.exp-item h3{font-size:18px;margin-bottom:6px;}
-.exp-item p{color:#a8a8a8;font-size:14px;}
-.about{max-width:700px;}
-.about h2{font-family:"Playfair Display", serif;font-size:40px;margin-bottom:20px;}
-.about p{color:#bfbfbf;margin-bottom:15px;}
-.contact{text-align:center;}
-.contact h2{font-family:"Playfair Display", serif;font-size:42px;margin-bottom:20px;}
-.contact p{color:#a8a8a8;margin-bottom:10px;}
-.contact a.btn{color:white;text-decoration:none;border:1px solid #444;padding:12px 28px;display:inline-block;margin-top:20px;transition:.3s;}
-.contact a.btn:hover{background:white;color:black;}
-.contact .languages{color:#777;font-size:14px;margin-top:30px;letter-spacing:.05em;}
-footer{padding:40px 8vw;color:#777;font-size:13px;}
-@media(max-width:768px){
-  .hero h1{font-size:36px;}
-  .project{grid-template-columns:1fr;gap:40px;}
-  .exp-grid{grid-template-columns:1fr;}
-  section{padding:80px 6vw;}
+body{background:#0d0d0d;color:#fff;font-family:"Nunito Sans",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* PILL BUTTON */
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.35);border-radius:29px;padding:6px 18px;font-size:13px;font-weight:400;color:#fff;text-decoration:none;letter-spacing:.04em;transition:background .3s,color .3s;cursor:pointer;background:rgba(255,255,255,.05);backdrop-filter:blur(12px);}
+.pill:hover{background:#fff;color:#0d0d0d;}
+.pill-sm{padding:6px 18px;font-size:13px;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;background:transparent;padding:20px 0;display:flex;justify-content:center;gap:14px;z-index:100;}
+
+/* HERO */
+.hero{padding:0;text-align:center;position:relative;height:100vh;overflow:hidden;}
+.hero h1{font-family:"Big Caslon",serif;font-size:clamp(36px,5.5vw,130px);font-weight:400;letter-spacing:-1px;line-height:1.05;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-shadow:0 2px 20px rgba(0,0,0,.5);}
+.hero-bar{position:absolute;top:0;left:0;width:100%;height:100%;}
+.hero-bar video{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-sub{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;font-size:clamp(16px,1.6vw,32px);font-weight:500;letter-spacing:.04em;padding:30px 0;font-family:"Big Caslon",serif;}
+
+/* SECTIONS */
+section{padding:100px 6vw;}
+.section-title{font-family:"Big Caslon",serif;font-size:clamp(36px,5.5vw,130px);font-weight:400;text-align:center;margin-bottom:60px;}
+.section-title-left{font-family:"Big Caslon",serif;font-size:clamp(36px,5.5vw,130px);font-weight:400;text-align:left;margin-bottom:60px;}
+
+/* SERVICES */
+.services{background:#0d0d0d;}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1200px;margin:0 auto;}
+.service-card{text-align:center;}
+.service-card img{width:100%;aspect-ratio:0.92;object-fit:cover;border-radius:3px;margin-bottom:18px;}
+.service-card span{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:18px;letter-spacing:.02em;text-transform:uppercase;}
+
+/* SELECTED WORKS */
+.works-list{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:120px;}
+.work-item{}
+.work-item img{width:100%;max-height:550px;object-fit:cover;}
+.work-bottom{display:flex;justify-content:space-between;align-items:flex-start;margin-top:16px;gap:20px;}
+.work-bottom h3{font-size:17px;font-weight:600;margin-bottom:6px;}
+.work-bottom p{font-size:17px;font-weight:200;line-height:1.6;max-width:700px;}
+.work-bottom .pill{flex-shrink:0;align-self:center;}
+
+/* CREATIVE PRODUCTION */
+.production{}
+.skills-box{max-width:1100px;margin:0 auto 50px;border:1px solid #fff;border-radius:29px;padding:30px 36px;}
+.skills-box h3{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:18px;margin-bottom:12px;}
+.skills-box p{font-weight:200;font-size:17px;line-height:1.8;}
+.production-gallery{max-width:1100px;margin:0 auto;display:flex;gap:8px;align-items:stretch;height:550px;}
+.prod-card{flex:1;border-radius:22px;overflow:hidden;position:relative;cursor:pointer;transition:flex .6s cubic-bezier(.4,0,.2,1),opacity .4s;opacity:.7;}
+.prod-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.prod-card .prod-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 28px;background:linear-gradient(transparent,rgba(0,0,0,.8));opacity:0;transition:opacity .4s;}
+.prod-card .prod-overlay h4{font-size:18px;font-weight:600;margin-bottom:4px;}
+.prod-card .prod-overlay p{font-size:14px;font-weight:200;color:#ccc;}
+.prod-card:hover,.production-gallery:not(:hover) .prod-card.active{flex:5;opacity:1;}
+.prod-card:hover .prod-overlay,.production-gallery:not(:hover) .prod-card.active .prod-overlay{opacity:1;}
+.production-caption{max-width:1100px;margin:20px auto 0;font-size:17px;}
+
+/* EXHIBITIONS */
+.exhibitions{text-align:center;}
+.exh-section{margin-bottom:40px;}
+.exh-section .pill{margin-bottom:24px;}
+.exh-list{list-style:none;max-width:700px;margin:0 auto;text-align:left;}
+.exh-list li{font-weight:200;font-size:17px;margin-bottom:16px;line-height:1.6;}
+
+/* ABOUT */
+.about-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.about-grid img{width:100%;object-fit:cover;}
+.about-text p{font-weight:400;font-size:17px;margin-bottom:18px;line-height:1.7;}
+.about-text .pill{margin-top:10px;}
+
+/* CONTACT */
+.contact{text-align:center;padding-bottom:40px;}
+.contact-links{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:20px;}
+
+/* FOOTER */
+footer{text-align:center;padding:30px 6vw;font-weight:600;font-size:15px;letter-spacing:.02em;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr 1fr;gap:16px;}
+  .about-grid{grid-template-columns:1fr;}
+  .production-gallery{flex-direction:column;height:auto;}
+  .production-gallery .side-img{display:none;}
+  .nav{gap:6px;padding:14px 4vw;flex-wrap:wrap;}
+  .pill{padding:7px 16px;font-size:12px;}
+  .hero-sub{gap:20px;font-size:13px;}
+  .hero-bar img{height:300px;}
+  .work-bottom{flex-direction:column;}
+}
+@media(max-width:600px){
+  .services-grid{grid-template-columns:1fr;}
+  section{padding:60px 5vw;}
 }
 </style>
 </head>
-
 <body>
 
-<div class="nav">
-<div>Ventcislava Nekova</div>
-<div>
-<a href="#work">Work</a>
-<a href="#experience">Experience</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
+<!-- NAV -->
+<nav class="nav">
+<a href="#about" class="pill pill-sm">ABOUT</a>
+<a href="#production" class="pill pill-sm">PRODUCTION</a>
+<a href="#services" class="pill pill-sm">SERVICES</a>
+<a href="#works" class="pill pill-sm">SELECTED WORKS</a>
+<a href="#exhibitions" class="pill pill-sm">EXHIBITIONS</a>
+<a href="#contact" class="pill pill-sm">CONTACT</a>
+</nav>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Creative Production<br>at the intersection of<br>dance, technology & experience</h1>
-<p>I produce immersive artistic projects combining performance, installation and digital media.</p>
-</section>
-
-<!-- R.E.S.T.A.G.E Collective -->
-<section id="work" class="project">
-<div class="project-text">
-<h2>R.E.S.T.A.G.E Collective</h2>
-<div class="project-role">Production Coordinator · Copeland Gallery · Feb 2026</div>
-<p>Produced and coordinated a group exhibition involving artists, performers, and technical collaborators — spanning panels, workshops, live concerts and jams across a 3-day visual arts, dance and tech festival.</p>
-<ul>
-<li>Organised entire production budgeting, curation, installation planning, and logistics</li>
-<li>Coordinated deliveries, equipment, and spatial setup</li>
-<li>Maintained shared production documents, schedules, and references</li>
-<li>Central point of communication between collaborators and gallery</li>
-</ul>
-</div>
-<div class="project-images">
-<img src="assets/img/img-001.jpg" alt="R.E.S.T.A.G.E gallery installation" />
-<img src="assets/img/img-002.jpg" alt="R.E.S.T.A.G.E performance" />
-<img src="assets/img/img-003.jpg" alt="R.E.S.T.A.G.E artwork" />
-<img src="assets/img/img-004.jpg" alt="R.E.S.T.A.G.E exhibition view" />
+<h1>VENTCISLAVA NEKOVA</h1>
+<div class="hero-bar">
+<video autoplay muted loop playsinline src="assets/videos/landing-page-new.mp4"></video>
 </div>
 </section>
 
-<!-- CYCLES -->
-<section class="project">
-<div class="project-text">
-<h2>Cycles</h2>
-<div class="project-role">Director & Producer · Frameless Gallery & RCA · July 2025</div>
-<p>An original immersive work existing both as a 360° VR film and a live performance set in an immersive environment.</p>
-<ul>
-<li>Created and directed the piece from concept to execution, leading narrative and immersive design</li>
-<li>Managed all production: team coordination, scheduling, budgeting, tech integration, and rehearsals</li>
-<li>Delivered and installed at Frameless, adapting to a large-scale projection environment</li>
-<li>Liaison between Frameless and RCA: branding, space negotiations and tech setup</li>
-<li>Led social media strategy and communications for the RCA show, aligning 70 artists with venue guidelines</li>
-</ul>
+<!-- SERVICES -->
+<section id="services" class="services">
+<h2 class="section-title">SERVICES</h2>
+<div class="services-grid">
+<div class="service-card">
+<img src="assets/img/img-002.jpg" alt="Creative Production" />
+<span>Creative Production</span>
 </div>
-<div class="project-images">
-<img src="assets/img/img-007.jpg" alt="CYCLES performance still" />
-<img src="assets/img/img-008.jpg" alt="CYCLES immersive environment" />
+<div class="service-card">
+<img src="assets/img/v759_102.png" alt="Art Direction" />
+<span>Art Direction</span>
 </div>
-</section>
-
-<!-- Dance. Film. Performance Company -->
-<section class="project">
-<div class="project-text">
-<h2>Dance. Film. Performance Company</h2>
-<div class="project-role">Production Coordinator · Multiple venues, London · 2024–2025</div>
-<p>Supported the delivery of live performance series merging dance, film, and new media practices.</p>
-<ul>
-<li>Handled logistics delivery — equipment, catering, on-site prep</li>
-<li>Supervised production volunteers and managed schedules of dancers</li>
-<li>Maintained clear guest and crew communication</li>
-<li>Adapted quickly under pressure when last-minute changes occurred</li>
-<li>Anticipated needs of team members before they were voiced</li>
-</ul>
+<div class="service-card">
+<img src="assets/img/service-digital-design.jpg" alt="Digital Design" />
+<span>Digital Design</span>
 </div>
-<div class="project-images">
-<img src="assets/img/img-005.jpg" alt="Dance Film Performance" />
-<img src="assets/img/img-006.jpg" alt="Dance Film Performance venue" />
+<div class="service-card">
+<img src="assets/img/v759_104.png" alt="Movement Direction" />
+<span>Movement Direction</span>
+</div>
 </div>
 </section>
 
-<!-- Digital Body Festival -->
-<section class="project">
-<div class="project-text">
-<h2>Digital Body Festival</h2>
-<div class="project-role">Production Assistant · Alexander Whitley Company · Hackney Bridge · Nov 2024</div>
-<p>Supported the VR gallery as part of the Digital Body Festival, showcasing body-centered digital art across a 3-day immersive technology and dance festival.</p>
-<ul>
-<li>Assisted in the installation and on-boarding for artists in the VR Gallery</li>
-<li>Ensured smooth transitions between sessions and gallery pieces</li>
-<li>Collaborated with technical leads to resolve live issues</li>
-<li>Filmed panel talks</li>
-<li>Supported audience interaction with the VR pieces</li>
-</ul>
+<!-- SELECTED WORKS -->
+<section id="works">
+<h2 class="section-title">SELECTED WORKS</h2>
+<div class="works-list">
+
+<div class="work-item">
+<video autoplay muted loop playsinline src="assets/videos/cycles-live.mp4" style="width:100%;max-height:550px;object-fit:cover;"></video>
+<div class="work-bottom">
+<div><h3>CYCLES, LIVE PERFORMANCE, 2025</h3>
+<p>Creative direction &amp; choreographic storytelling · Project production &amp; post-production · Spatial &amp; immersive experience design</p></div>
+<a href="projects/cycles-live.html" class="pill">MORE</a>
 </div>
-<div class="project-images">
+</div>
+
+<div class="work-item">
+<video autoplay muted loop playsinline src="assets/videos/cycles-vr.mp4" style="width:100%;max-height:550px;object-fit:cover;"></video>
+<div class="work-bottom">
+<div><h3>CYCLES, VIRTUAL REALITY, 2025</h3>
+<p>360 Film-Production, Editing<br>Immersive Production, VR workflows</p></div>
+<a href="projects/cycles-vr.html" class="pill">MORE</a>
+</div>
+</div>
+
+<div class="work-item">
+<video autoplay muted loop playsinline src="assets/videos/rewiring-intimacy.mp4" style="width:100%;max-height:550px;object-fit:cover;"></video>
+<div class="work-bottom">
+<div><h3>REWIRING INTIMACY, 2025</h3>
+<p>Art Direction, Movement Direction, Sound Design</p></div>
+<a href="projects/rewiring-intimacy.html" class="pill">MORE</a>
+</div>
+</div>
+
+<div class="work-item">
+<img src="assets/img/v759_168.png" alt="Echoes of Connection" />
+<div class="work-bottom">
+<div><h3>ECHOES OF CONNECTION, 2023</h3>
+<p>Direction &amp; Production, Film Production and Post-Production</p></div>
+<a href="projects/echoes-of-connection.html" class="pill">MORE</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- CREATIVE PRODUCTION -->
+<section id="production" class="production">
+<h2 class="section-title">CREATIVE PRODUCTION</h2>
+<div class="skills-box">
+<h3>SKILLS &amp; TOOLS</h3>
+<p>End-to-end project management · Artist liaison · Budgeting &amp; scheduling · Logistics &amp; installation · Venue coordination · On-site troubleshooting · Team leadership · Exhibition Design</p>
+</div>
+<div class="production-gallery">
+<div class="prod-card active">
+<img src="assets/img/img-004.jpg" alt="Choreo-Graphic Systems" />
+<div class="prod-overlay">
+<h4>Choreo-Graphic Systems</h4>
+<p>R.E.S.T.A.G.E Collective, 2026 · Founder &amp; Creative Producer</p>
+<a href="projects/restage.html" class="pill" style="margin-top:10px;">MORE</a>
+</div>
+</div>
+<div class="prod-card">
+<img src="assets/img/production-venue.jpg" alt="Dance Film Performance" />
+<div class="prod-overlay">
+<h4>Dance. Film. Performance</h4>
+<p>St John Church, London · Production Coordinator</p>
+</div>
+</div>
+<div class="prod-card">
+<img src="assets/img/dfp-festival.jpg" alt="DFP Film Festival" />
+<div class="prod-overlay">
+<h4>Dance. Film. Performance</h4>
+<p>DFP Film Festival · Production Coordinator</p>
+</div>
+</div>
+<div class="prod-card">
 <img src="assets/img/img-009.jpg" alt="Digital Body Festival" />
-<img src="assets/img/img-010.jpg" alt="Digital Body Festival event" />
-<img src="assets/img/img-011.jpg" alt="Digital Body Festival VR" />
+<div class="prod-overlay">
+<h4>Digital Body Festival</h4>
+<p>Alexander Whitley Company, 2024 · Production Assistant</p>
 </div>
-</section>
-
-<!-- Resonance -->
-<section class="project">
-<div class="project-text">
-<h2>Resonance</h2>
-<div class="project-role">Research Assistant · Kinda Studios & Westminster University · April 2025</div>
-<p>Supported the production of a cross-media event combining DJ practices, ambisonic systems, and live music to test new modes of sound integration in events.</p>
-<ul>
-<li>Assisted in managing on-site artist and tech transitions</li>
-<li>Collected data from participants in a friendly and curious way</li>
-<li>Supported interactive sound experiments and audience engagement</li>
-<li>Supported communication with audience</li>
-</ul>
 </div>
-<div class="project-images single">
-<img src="assets/img/img-012.jpg" alt="Resonance immersive sound event" />
-</div>
-</section>
-
-<!-- OOTFest25 -->
-<section class="project">
-<div class="project-text">
-<h2>OOTFest25 (UN)SEEN</h2>
-<div class="project-role">Assistant to Event Manager · IJAD Dance Company · Riverside Studios · June 2025</div>
-<p>Supported the delivery of a multidisciplinary festival blending dance, immersive technology, and live installations.</p>
-<ul>
-<li>Supported artists and performers during setup and live events across multiple spaces</li>
-<li>First point of contact for technical issues, offering immediate solutions and creative alternatives</li>
-<li>Helped adapt layouts on-site and ensure smooth transitions between works</li>
-<li>Engaged with audiences, facilitated interaction, and supported festival documentation</li>
-</ul>
-</div>
-<div class="project-images">
+<div class="prod-card">
 <img src="assets/img/img-013.jpg" alt="OOTFest25" />
-<img src="assets/img/img-014.jpg" alt="OOTFest25 VR experience" />
-<img src="assets/img/img-015.jpg" alt="OOTFest25 performance" />
+<div class="prod-overlay">
+<h4>OOTFest25 (UN)SEEN</h4>
+<p>IJAD Dance Company, 2025 · Assistant to Event Manager</p>
 </div>
-</section>
-
-<!-- Experience -->
-<section id="experience" class="experience">
-<h2>Experience</h2>
-<div class="exp-grid">
-<div class="exp-item">
-<h3>R.E.S.T.A.G.E Collective</h3>
-<p>Production Coordinator · Feb 2026</p>
-</div>
-<div class="exp-item">
-<h3>CYCLES — VR & Live Performance</h3>
-<p>Director & Producer · July 2025</p>
-</div>
-<div class="exp-item">
-<h3>OOTFest25 — IJAD Dance Company</h3>
-<p>Assistant to Event Manager · June 2025</p>
-</div>
-<div class="exp-item">
-<h3>Resonance — Immersive Sound Event</h3>
-<p>Research Assistant · April 2025</p>
-</div>
-<div class="exp-item">
-<h3>Dance. Film. Performance Company</h3>
-<p>Production Coordinator · 2024–2025</p>
-</div>
-<div class="exp-item">
-<h3>Digital Body Festival — Alexander Whitley</h3>
-<p>Production Assistant · Nov 2024</p>
-</div>
-<div class="exp-item">
-<h3>Women@Dior & UNESCO</h3>
-<p>Creative Leadership Programme · Current</p>
 </div>
 </div>
 </section>
 
-<!-- About -->
-<section id="about" class="about">
-<h2>About</h2>
-<p>I'm an emerging creative producer and digital storyteller working at the intersection of performance, technology, and immersive experiences. My background is in design and movement-led projects, and I care deeply about how people experience a space emotionally, physically, and sensorially.</p>
+<!-- EXHIBITIONS -->
+<section id="exhibitions" class="exhibitions">
+<h2 class="section-title">EXHIBITIONS</h2>
+
+<div class="exh-section">
+<span class="pill">EXHIBITIONS</span>
+<ul class="exh-list">
+<li>London Breeze Film Festival — Cycles, Spatial Storytelling (RCA x LBFF), 22 October 2025, London Breeze Film Festival</li>
+<li>Frameless Gallery — Unbinding the Bodies and Systems, 2 July 2025, Frameless Immersive Art Experience</li>
+<li>Choreo-Graphic Systems — Co-creator &amp; Producer, 6–8 February 2026 (R.E.S.T.A.G.E Collective)</li>
+<li>Headonists Event — Immersive presentation &amp; screening, 11 March 2026, Headonists Event</li>
+</ul>
+</div>
+
+<div class="exh-section">
+<span class="pill">TALKS</span>
+<ul class="exh-list">
+<li>Royal College of Art — Being Digital, 10 November 2025</li>
+</ul>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">ABOUT</h2>
+<div class="about-grid">
+<img src="assets/img/about-portrait.jpg" alt="Ventcislava Nekova" />
+<div class="about-text">
+<p>Hello! I am Ventcislava and I am a creative producer and a digital storyteller working at the intersection of performance, technology, and immersive installation. My background is in design and movement-led projects, and I care deeply about how people experience a space emotionally, physically, and sensorially.</p>
 <p>I'm drawn to collaborative environments where ideas evolve quickly and I enjoy being fully embedded in the process from early concept to final delivery, working closely with others to bring ambitious ideas to life.</p>
-<p>I'm currently part of the Women@Dior & UNESCO programme, where I'm exploring creative leadership and the role of luxury brands in shaping meaningful experiences.</p>
+<p>I'm currently developing R.E.S.T.A.G.E, a female led visual arts and dance centred collective, where I'm exploring creative leadership in shaping meaningful experiences.</p>
+<a href="#" class="pill">CV</a>
+</div>
+</div>
 </section>
 
-<!-- Contact -->
+<!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>Get in touch</h2>
-<p>ventzislavanekova@gmail.com</p>
-<a class="btn" href="mailto:ventzislavanekova@gmail.com">Say hello</a>
-<p class="languages">English · French · Spanish · Bulgarian</p>
+<h2 class="section-title">CONTACT</h2>
+<div class="contact-links">
+<a href="mailto:ventzislavanekova@gmail.com" class="pill">ventzislavanekova@gmail.com</a>
+<a href="https://instagram.com/ventciii" target="_blank" rel="noopener" class="pill pill-sm">@ventciii</a>
+</div>
 </section>
 
-<footer>
-<a href="https://linkedin.com/in/ventcislava-nekova-7717b9201" target="_blank" rel="noopener" style="color:#777;text-decoration:none;">LinkedIn ↗</a>
-</footer>
+<footer>&copy; 2026, Ventcislava Nekova</footer>
 
 </body>
 </html>
