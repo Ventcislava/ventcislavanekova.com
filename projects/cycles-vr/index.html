@@ -37,6 +37,8 @@ body{background:#0d0d0d;color:#fff;font-family:"Nunito Sans",sans-serif;line-hei
 .content li::before{content:"·";position:absolute;left:0;color:#666;font-weight:800;}
 .gallery{max-width:900px;margin:40px auto;padding:0 6vw;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .gallery img{width:100%;border-radius:8px;object-fit:cover;aspect-ratio:16/10;}
+.gallery video{width:100%;border-radius:8px;object-fit:cover;display:block;}
+.gallery .featured-video{grid-column:1/-1;aspect-ratio:16/9;}
 .gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9;}
 footer{text-align:center;padding:60px 6vw 30px;font-weight:600;font-size:15px;letter-spacing:.02em;color:#555;}
 @media (min-width:1200px){
@@ -78,6 +80,7 @@ footer{text-align:center;padding:60px 6vw 30px;font-weight:600;font-size:15px;le
 </div>
 
 <div class="gallery">
+<video autoplay muted loop playsinline class="featured-video" src="../../assets/videos/cycles-vr-closeup.mp4" aria-label="Cycles VR 360° film close-up"></video>
 <img src="../../assets/img/img-003.jpg" alt="Cycles VR installation" />
 <img src="../../assets/img/cycles-vr-still.jpg" alt="Cycles VR still" />
 <img src="../../assets/img/cycles-vr-viewer.jpg" alt="Cycles VR viewer" />
