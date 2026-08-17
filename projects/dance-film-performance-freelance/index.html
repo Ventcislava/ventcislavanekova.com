@@ -36,7 +36,8 @@ body{background:#0d0d0d;color:#fff;font-family:"Nunito Sans",sans-serif;line-hei
 .content li::before{content:"·";position:absolute;left:0;color:#666;font-weight:800;}
 .gallery{max-width:900px;margin:40px auto;padding:0 6vw;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .gallery img{width:100%;border-radius:8px;object-fit:cover;aspect-ratio:16/10;}
-.gallery img:first-child{grid-column:1/-1;aspect-ratio:16/9;}
+.gallery video{width:100%;height:auto;max-height:80vh;border-radius:8px;object-fit:contain;display:block;}
+.gallery .featured-video{grid-column:1/-1;}
 footer{text-align:center;padding:60px 6vw 30px;font-weight:600;font-size:15px;letter-spacing:.02em;color:#555;}
 @media (min-width:1200px){
   .content{max-width:1200px;padding-left:48px;padding-right:48px;}
@@ -74,14 +75,15 @@ footer{text-align:center;padding:60px 6vw 30px;font-weight:600;font-size:15px;le
 </div>
 
 <div class="gallery">
+<video autoplay muted loop playsinline class="featured-video" src="../../assets/videos/dfp-various-venues.m4v" aria-label="Dance. Film. Performance at various London venues"></video>
 <img src="../../assets/img/dfp-bigsky.jpg" alt="Big Sky Studios — performance space with audience" />
 <img src="../../assets/img/dfp-freelance-extra.jpg" alt="Dance. Film. Performance — silhouetted dancers" />
 <img src="../../assets/img/production-venue.jpg" alt="St John Church — performance venue" />
-<img src="../../assets/img/dfp-screening.jpg" alt="Dance. Film. Performance — film screening" />
-<img src="../../assets/img/dfp-audience.jpg" alt="Dance. Film. Performance — audience watching projection" />
+<img src="../../assets/img/dfp-st-john-installation.jpeg" alt="St John Church — illuminated installation" />
 </div>
 
 <footer>&copy; 2026, Ventcislava Nekova</footer>
 
+<script src="../../assets/video-loop.js"></script>
 </body>
 </html>
