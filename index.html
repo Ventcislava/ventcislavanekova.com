@@ -119,17 +119,24 @@ footer{text-align:center;padding:30px 6vw;font-weight:600;font-size:15px;letter-
   section{padding:60px 5vw;}
 }
 </style>
+<link rel="stylesheet" href="assets/home-responsive.css?v=2" />
 </head>
 <body>
 
 <main>
 <nav class="nav">
-<a href="#about" class="pill pill-sm">ABOUT</a>
-<a href="#production" class="pill pill-sm">PRODUCTION</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open menu">
+<span></span>
+<span></span>
+</button>
+<div class="nav-menu" id="mobile-navigation">
 <a href="#services" class="pill pill-sm">SERVICES</a>
 <a href="#works" class="pill pill-sm">APPLIED PRACTICE</a>
+<a href="#production" class="pill pill-sm">PRODUCTION</a>
 <a href="#exhibitions" class="pill pill-sm">EXHIBITIONS</a>
+<a href="#about" class="pill pill-sm">ABOUT</a>
 <a href="#contact" class="pill pill-sm">CONTACT</a>
+</div>
 </nav>
 
 <!-- HERO -->
@@ -317,5 +324,6 @@ footer{text-align:center;padding:30px 6vw;font-weight:600;font-size:15px;letter-
 <footer>&copy; 2026, Ventcislava Nekova</footer>
 
 <script src="assets/video-loop.js?v=2"></script>
+<script src="assets/mobile-nav.js?v=1"></script>
 </body>
 </html>
