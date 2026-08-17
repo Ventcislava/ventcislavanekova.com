@@ -3,12 +3,17 @@
   const restartDelay = 400;
 
   const keepPlaying = (video) => {
+    video.autoplay = true;
     video.loop = true;
     video.muted = true;
     video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("autoplay", "");
     video.setAttribute("loop", "");
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    video.setAttribute("preload", "auto");
     const playback = video.play();
     if (playback) playback.catch(() => {});
   };
@@ -24,6 +29,9 @@
 
   videos.forEach((video) => {
     video.addEventListener("ended", () => restart(video));
+
+    video.addEventListener("loadeddata", () => keepPlaying(video));
+    video.addEventListener("canplay", () => keepPlaying(video));
 
     video.addEventListener("pause", () => {
       if (!document.hidden) {
@@ -55,5 +63,16 @@
         else keepPlaying(video);
       });
     }
+  });
+
+  window.addEventListener("pageshow", () => videos.forEach(keepPlaying));
+
+  // Mobile browsers can require one user gesture before allowing playback.
+  // The first tap anywhere on the page immediately starts every muted video.
+  document.addEventListener("pointerdown", () => videos.forEach(keepPlaying), {
+    passive: true,
+  });
+  document.addEventListener("touchstart", () => videos.forEach(keepPlaying), {
+    passive: true,
   });
 })();
