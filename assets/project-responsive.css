@@ -1,3 +1,12 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 24px;
+  font-size: 13px;
+}
+
 @media (max-width: 700px) {
   body {
     overflow-x: hidden;
@@ -6,8 +15,8 @@
   .back {
     top: max(12px, env(safe-area-inset-top));
     left: 16px;
-    padding: 7px 14px;
-    font-size: 12px;
+    padding: 8px 24px;
+    font-size: 13px;
     background: rgba(13, 13, 13, .55);
   }
 
