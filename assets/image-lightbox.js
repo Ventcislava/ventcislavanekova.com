@@ -1,17 +1,22 @@
 (() => {
-  const galleryImages = [...document.querySelectorAll(".gallery img")];
+  const galleryImages = [
+    ...document.querySelectorAll(".gallery img, img.lightbox-image"),
+  ];
   if (!galleryImages.length) return;
 
   const styles = document.createElement("style");
   styles.textContent = `
-    .gallery img.image-lightbox-trigger {
+    .gallery img.image-lightbox-trigger,
+    img.lightbox-image.image-lightbox-trigger {
       cursor: zoom-in;
       transition: opacity .2s ease;
     }
-    .gallery img.image-lightbox-trigger:hover {
+    .gallery img.image-lightbox-trigger:hover,
+    img.lightbox-image.image-lightbox-trigger:hover {
       opacity: .88;
     }
-    .gallery img.image-lightbox-trigger:focus-visible {
+    .gallery img.image-lightbox-trigger:focus-visible,
+    img.lightbox-image.image-lightbox-trigger:focus-visible {
       outline: 2px solid #fff;
       outline-offset: 4px;
     }
@@ -74,6 +79,9 @@
       transition: color .2s ease, transform .2s ease;
       text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
     }
+    .image-lightbox__nav[hidden] {
+      display: none;
+    }
     .image-lightbox__nav:hover,
     .image-lightbox__nav:focus-visible {
       color: rgba(255, 255, 255, .82);
@@ -135,6 +143,11 @@
   nextButton.type = "button";
   nextButton.setAttribute("aria-label", "Next image");
   nextButton.textContent = ">";
+
+  if (galleryImages.length < 2) {
+    previousButton.hidden = true;
+    nextButton.hidden = true;
+  }
 
   const closeButton = document.createElement("button");
   closeButton.className = "image-lightbox__close";
